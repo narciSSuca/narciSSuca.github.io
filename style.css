@@ -1,0 +1,96 @@
+body {
+
+font-family: 'PT Sans', sans-serif, bold; /* Пусть горит в аду человек, 
+ 							 который придумал подключать каждый шрифт отдельно*/
+margin: 0px;     /* при скроле видны косяки в работе с фигуррами, наверное, лучше убрать ползунки */                    
+overflow: hidden;
+background-color: #E4B28D 
+}
+
+h1 {
+	
+	position: absolute;
+width: 700px;
+height: 200px;
+left: 145px;
+top: 130px;
+font-size: 60px;
+line-height: 70px;
+color: white;
+}
+
+p {
+	position: absolute;
+width: 690px;
+height: 180px;
+color: #ffffff;
+font-size: 30px;
+left: 150px;
+top: 300px;
+line-height: 35px;
+
+}
+
+.avatar {
+	position: absolute;
+width: 400px;
+height: 500px;
+left: 900px;
+top: 110px;
+}
+
+.info {
+	position: absolute;
+width: 690px;
+height: 180px;
+left: 150px;
+top: 320px;
+font-size: 30px;
+line-height: 40px;
+color: white;
+}
+
+/* фигуры не вбиты одной картинкой в фон, когда дойдёшь до анимаций с JS, займись ими*/
+.fig-1 {     
+	position: absolute;
+width: 330px;
+height: 330px;
+left: -80px;
+top: 480px;
+}
+
+.fig-2 {
+	position: absolute;
+width: 333px;
+height: 333px;
+left: 1115px;
+top: 600px;
+}
+
+.fig-3 {
+	position: absolute;
+width: 930px;
+left: 900px;
+top: -350px;
+}
+
+.fig-4 {
+	position: absolute;
+width: 135px;
+height: 125px;
+left: 130px;
+top: -5px;
+}
+
+/* !!!ПОГУГЛИ ПРАВИЛЬНЫЙ ПОРЯДОК СВОЙСТВ ДЛЯ CSS ПРАВИЛ!!!*/
+a {
+	text-decoration: none; /* пусть из говна и палок, но зато работает*/
+ 	margin: 40px;
+ 	margin-left: 0;
+	background: #000000;
+	color:#ffffff;
+	padding: 10px;
+	border-radius: 10px;
+	line-height: 130px;
+	filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.7));
+}
