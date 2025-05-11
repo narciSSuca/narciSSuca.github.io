@@ -62,18 +62,48 @@ input[type="text"] {
     margin-bottom: 10%;
 }
 
+/* Общие стили для ссылок в карточках */
 .card a {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
     transition: color 0.3s;
 }
 
 .card a:hover {
     color: #0056b3;
+}
+
+/* Специфичные стили для обычных карточек */
+.card:not(.reports-card) a {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+/* Стили только для карточки отчетов */
+.reports-card {
+    min-height: 400px; /* Фиксированная высота для единообразия */
+}
+
+.reports-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.reports-link {
+    display: block;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: #f8fafc;
+    transition: background-color 0.2s;
+}
+
+.reports-link:hover {
+    background-color: #e6f0fa;
+    text-decoration: none;
 }
 
 @media (max-width: 600px) {
@@ -85,5 +115,8 @@ input[type="text"] {
     .card {
         width: 90%;
     }
+    
+    .reports-card {
+        min-height: auto;
+    }
 }
-
