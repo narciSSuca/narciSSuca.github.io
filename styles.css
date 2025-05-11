@@ -33,18 +33,17 @@ input[type="text"] {
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
+    gap: 20px;
 }
 
+/* Общие стили для всех карточек */
 .card {
     background-color: white;
     border-radius: 10px;
-    padding: 15px;
-    margin: 15px;
+    padding: 20px;
     width: 300px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
 }
 
 .card:hover {
@@ -53,57 +52,63 @@ input[type="text"] {
 }
 
 .card h2 {
-    margin: 0 0 10px;
+    margin: 0 0 15px 0;
     color: #333;
+    font-size: 1.2rem;
 }
 
-.card p {
+/* Стили для обычных карточек (с одной ссылкой) */
+.regular-card {
+    position: relative;
+    min-height: 150px;
+}
+
+.regular-card p {
     color: #666;
-    margin-bottom: 10%;
+    margin: 0 0 40px 0;
 }
 
-/* Общие стили для ссылок в карточках */
-.card a {
+.regular-card a {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
-.card a:hover {
+.regular-card a:hover {
     color: #0056b3;
+    text-decoration: underline;
 }
 
-/* Специфичные стили для обычных карточек */
-.card:not(.reports-card) a {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-}
-
-/* Стили только для карточки отчетов */
+/* Стили для карточки отчетов */
 .reports-card {
-    min-height: 400px; /* Фиксированная высота для единообразия */
+    display: flex;
+    flex-direction: column;
 }
 
 .reports-links {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .reports-link {
     display: block;
-    padding: 6px 8px;
-    border-radius: 4px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
     background-color: #f8fafc;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
 .reports-link:hover {
     background-color: #e6f0fa;
-    text-decoration: none;
+    color: #0056b3;
 }
 
 @media (max-width: 600px) {
@@ -114,9 +119,5 @@ input[type="text"] {
 
     .card {
         width: 90%;
-    }
-    
-    .reports-card {
-        min-height: auto;
     }
 }
