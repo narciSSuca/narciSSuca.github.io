@@ -32,6 +32,7 @@ input[type="text"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* <-- ВАЖНО: убирает выравнивание по высоте */
     padding: 20px;
     gap: 20px;
 }
