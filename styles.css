@@ -12,9 +12,7 @@ header {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    /* убрано: position: sticky; top: 0; */
 }
 
 .logo {
@@ -162,3 +160,4 @@ input[type="text"] {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
 }
+
