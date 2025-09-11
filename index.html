@@ -12,11 +12,9 @@
         <img src="logo.png" alt="Логотип" class="logo">
         <h1>Аналитика и Дашборды</h1>
         <input type="text" id="search" placeholder="Поиск по карточкам...">
-    </hea
-        
-        der>
+    </header>
+
     <main id="card-container">
-        
         <div class="card regular-card">
             <h2>Ежедневные показатели для аналитика</h2>
             <p>Описание: Объём, покрытие, накопительное</p>
@@ -25,13 +23,13 @@
 
         <div class="card regular-card">
             <h2>Потенциал/Сенсус</h2>
-            <p>Описание: мониторинг работы с потенциалом </p>
+            <p>Описание: мониторинг работы с потенциалом</p>
             <a href="https://datalens.yandex/e60ym262gu0qz" target="_blank">Перейти к дашборду</a>
         </div>
         
         <div class="card regular-card">
             <h2>Дисциплина</h2>
-            <p>Описание: сводная информация о визитах ESR </p>
+            <p>Описание: сводная информация о визитах ESR</p>
             <a href="https://datalens.yandex/llp65av7umng6" target="_blank">Перейти к дашборду</a>
         </div>   
 
@@ -47,23 +45,6 @@
             <a href="https://datalens.yandex/uv5hguqx6rnyf" target="_blank">Перейти к дашборду</a>
         </div>        
         
-<!--         <div class="card regular-card">
-            <h2>Объём</h2>
-            <p>Описание: Факт объёма. Фильтры по Территориям и тирам ТТ</p>
-            <a href="https://datalens.yandex/2ad4vtiptfk4o" target="_blank">Перейти к дашборду</a>
-        </div> -->
-
-<!--         <div class="card regular-card">
-            <h2>Накопительное покрытие</h2>
-            <p>Описание: Сплитовка активных, с начала года, точек по необходимости отгрузки</p>
-            <a href="https://datalens.yandex/fnqlitztd7ja1" target="_blank">Перейти к дашборду</a>
-        </div> -->
-
-<!--         <div class="card regular-card">
-            <h2>Покрытие за месяц</h2>
-            <p>Описание: Факт покрытия. Фильтры по Территориям и тирам ТТ</p>
-            <a href="https://datalens.yandex/ailf7q4qzb7ww" target="_blank">Перейти к дашборду</a>
-        </div>         -->
         <div class="card reports-card">
             <h2>Ежедневные отчеты (Покрытие, Объем)</h2>
             <div class="reports-links">
@@ -79,9 +60,7 @@
                 <a href="https://datalens.yandex/zdfz217jeheil" target="_blank" class="reports-link">GC_Тула_TSM</a>
             </div>
         </div>      
-      
     </main>
-
 
     <a href="https://telemost.yandex.ru/j/92537877828086" class="video-conference-badge" target="_blank">
         Видеоконференция аналитика
@@ -96,11 +75,13 @@
                 const query = searchInput.value.toLowerCase();
                 cards.forEach(card => {
                     const title = card.querySelector('h2').textContent.toLowerCase();
-                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const descriptionEl = card.querySelector('p');
+                    const description = descriptionEl ? descriptionEl.textContent.toLowerCase() : '';
+                    
                     if (title.includes(query) || description.includes(query)) {
-                        card.style.display = '';
+                        card.classList.remove('hidden');
                     } else {
-                        card.style.display = 'none';
+                        card.classList.add('hidden');
                     }
                 });
             });
@@ -110,8 +91,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
