@@ -140,12 +140,12 @@ input[type="text"] {
 .video-conference-badge {
     position: fixed;
     top: 20px;
-    right: 20px; /* перенесена в правый верхний угол */
-    background-color: #007bff;
+    right: 20px;
+    background-color: #3399ff; /* немного светлее синего */
     color: white;
     padding: 12px 20px;
     border-radius: 25px;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* более выразительная тень */
     cursor: pointer;
     z-index: 1000;
     font-weight: bold;
@@ -156,8 +156,9 @@ input[type="text"] {
 }
 
 .video-conference-badge:hover {
-    background-color: #0056b3;
+    background-color: #1a82e2; /* тёмный оттенок при наведении */
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
 }
+
 
