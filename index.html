@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- ?v=2 — чтобы браузер не брал старый cached styles.css -->
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="icon" type="image/png" href="favicon-pivstar-online.ru.png">
     <title>Карточки Аналитики</title>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <img src="logo.png" alt="Логотип" class="logo">
         <h1>Аналитика и Дашборды</h1>
-        <input type="text" id="search" placeholder="Поиск по карточкам...">
+        <!-- Поиск оставил как статичный input — без JS он просто поле -->
+        <input type="text" id="search" placeholder="Поиск по карточкам..." aria-label="Поиск по карточкам">
     </header>
 
     <main id="card-container">
 
-        <!-- Зеленая -->
-        <div class="card regular-card">
-            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
+        <!-- Ежедневные показатели для аналитика — ЗЕЛЁНЫЙ -->
+        <article class="card regular-card">
+            <div class="badge badge-green" role="status" aria-label="Обновляется ежедневно с 8:00 до 9:00">
+                Обновляется ежедневно с 8:00 до 9:00
+            </div>
             <h2>Ежедневные показатели для аналитика</h2>
             <p>Описание: Объём, покрытие, накопительное</p>
-            <a href="https://datalens.yandex/x08wvggzw8aaj" target="_blank">Перейти к дашборду</a>
-        </div>
+            <a href="https://datalens.yandex/x08wvggzw8aaj" target="_blank" rel="noopener noreferrer">Перейти к дашборду</a>
+        </article>
 
-        <!-- Желтая -->
-        <div class="card regular-card">
-            <div class="badge badge-yellow">Обновляется торговой командой</div>
+        <!-- Потенциал/Сенсус — ЖЁЛТЫЙ -->
+        <article class="card regular-card">
+            <div class="badge badge-yellow" role="status" aria-label="Обновляется торговой командой">
+                Обновляется торговой командой
+            </div>
             <h2>Потенциал/Сенсус</h2>
             <p>Описание: мониторинг работы с потенциалом</p>
-            <a href="https://datalens.yandex/e60ym262gu0qz" target="_blank">Перейти к дашборду</a>
-        </div>
+            <a href="https://datalens.yandex/e60ym262gu0qz" target="_blank" rel="noopener noreferrer">Перейти к дашборду</a>
+        </article>
 
-        <!-- Красная -->
-        <div class="card regular-card">
-            <div class="badge badge-red">Обновляется по получению данных от Nestle</div>
+        <!-- Дисциплина — КРАСНЫЙ -->
+        <article class="card regular-card">
+            <div class="badge badge-red" role="status" aria-label="Обновляется по получению данных от Nestle">
+                Обновляется по получению данных от Nestle
+            </div>
             <h2>Дисциплина</h2>
             <p>Описание: сводная информация о визитах ESR</p>
-            <a href="https://datalens.yandex/llp65av7umng6" target="_blank">Перейти к дашборду</a>
-        </div>
+            <a href="https://datalens.yandex/llp65av7umng6" target="_blank" rel="noopener noreferrer">Перейти к дашборду</a>
+        </article>
 
-        <!-- Желтая -->
-        <div class="card regular-card">
-            <div class="badge badge-yellow">Обновляется торговой командой</div>
+        <!-- StoreChek — ЖЁЛТЫЙ -->
+        <article class="card regular-card">
+            <div class="badge badge-yellow" role="status" aria-label="Обновляется торговой командой">
+                Обновляется торговой командой
+            </div>
             <h2>StoreChek</h2>
             <p>Описание: динамика и наполнение проведённых StoreChek</p>
-            <a href="https://datalens.yandex/wss5uarvyf4ih" target="_blank">Перейти к дашборду</a>
-        </div>
+            <a href="https://datalens.yandex/wss5uarvyf4ih" target="_blank" rel="noopener noreferrer">Перейти к дашборду</a>
+        </article>
 
-        <!-- Зеленая -->
-        <div class="card regular-card">
-            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
+        <!-- Выполнение Tier 3 — ЗЕЛЁНЫЙ -->
+        <article class="card regular-card">
+            <div class="badge badge-green" role="status" aria-label="Обновляется ежедневно с 8:00 до 9:00">
+                Обновляется ежедневно с 8:00 до 9:00
+            </div>
             <h2>Выполнение Tier 3</h2>
             <p>Описание: Заказы, DBC и поточечный анализ</p>
-            <a href="https://datalens.yandex/adf56y4vc7huv" target="_blank">Перейти к дашборду</a>
-        </div>
+            <a href="https://datalens.yandex/adf56y4vc7huv" target="_blank" rel="noopener noreferrer">Перейти к дашборду</a>
+        </article>
 
-        <!-- Зеленая -->
-        <div class="card reports-card">
-            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
-            <h2>Ежедневные отчеты (Покрытие, Объем)</h2>
-
-            <div class="reports-links">
-                <a href="https://datalens.yandex/mz05k7u3u3b48" target="_blank" class="reports-link">GC_Воронеж_TSM</a>
-                <a href="https://datalens.yandex/s68p7s47fumse" target="_blank" class="reports-link">GC_Белгород_TSM</a>
-                <a href="https://datalens.yandex/aoq8040c47o0w" target="_blank" class="reports-link">GC_Брянск_TSM</a>
-                <a href="https://datalens.yandex/v9btrz3m9ui2h" target="_blank" class="reports-link">GC_Курск_TSM</a>
-                <a href="https://datalens.yandex/p35nww4qw19qb" target="_blank" class="reports-link">GC_Орел_TSM</a>
-                <a href="https://datalens.yandex/bpra5jam0m7ex" target="_blank" class="reports-link">GC_Липецк_TSM</a>
-                <a href="https://datalens.yandex/s68rx42box9ce" target="_blank" class="reports-link">GC_Тамбов_TSM</a>
-                <a href="https://datalens.yandex/r57q4hm00x8ad" target="_blank" class="reports-link">GC_Калуга_TSM</a>
-                <a href="https://datalens.yandex/yceymbmndkh4k" target="_blank" class="reports-link">GC_Смоленск_TSM</a>
-                <a href="https://datalens.yandex/zdfz217jeheil" target="_blank" class="reports-link">GC_Тула_TSM</a>
+        <!-- Ежедневные отчеты (Покрытие, Объем) — ЗЕЛЁНЫЙ -->
+        <article class="card reports-card">
+            <div class="badge badge-green" role="status" aria-label="Обновляется ежедневно с 8:00 до 9:00">
+                Обновляется ежедневно с 8:00 до 9:00
             </div>
-        </div>
+            <h2>Ежедневные отчеты (Покрытие, Объем)</h2>
+            <div class="reports-links">
+                <a class="reports-link" href="https://datalens.yandex/mz05k7u3u3b48" target="_blank" rel="noopener noreferrer">GC_Воронеж_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/s68p7s47fumse" target="_blank" rel="noopener noreferrer">GC_Белгород_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/aoq8040c47o0w" target="_blank" rel="noopener noreferrer">GC_Брянск_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/v9btrz3m9ui2h" target="_blank" rel="noopener noreferrer">GC_Курск_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/p35nww4qw19qb" target="_blank" rel="noopener noreferrer">GC_Орел_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/bpra5jam0m7ex" target="_blank" rel="noopener noreferrer">GC_Липецк_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/s68rx42box9ce" target="_blank" rel="noopener noreferrer">GC_Тамбов_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/r57q4hm00x8ad" target="_blank" rel="noopener noreferrer">GC_Калуга_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/yceymbmndkh4k" target="_blank" rel="noopener noreferrer">GC_Смоленск_TSM</a>
+                <a class="reports-link" href="https://datalens.yandex/zdfz217jeheil" target="_blank" rel="noopener noreferrer">GC_Тула_TSM</a>
+            </div>
+        </article>
 
     </main>
 
-    <a href="https://telemost.yandex.ru/j/92537877828086"
-       class="video-conference-badge"
-       target="_blank">
+    <a class="video-conference-badge" href="https://telemost.yandex.ru/j/92537877828086" target="_blank" rel="noopener noreferrer">
         Видеоконференция аналитика
     </a>
-
 </body>
 </html>
