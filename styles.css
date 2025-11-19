@@ -2,15 +2,17 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8;
+    background-color: #f0f4f8; /* светлый фон */
 }
 
+/* Шапка */
 header {
-    background-color: #007bff;
+    background-color: #007bff; /* только шапка синяя */
     color: white;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* убрано: position: sticky; top: 0; */
 }
 
 .logo {
@@ -28,14 +30,17 @@ input[type="text"] {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Контейнер карточек */
 #card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     padding: 20px;
     gap: 20px;
 }
 
+/* Общие стили карточек */
 .card {
     background-color: white;
     border-radius: 10px;
@@ -44,14 +49,33 @@ input[type="text"] {
     flex: 1 1 300px;
     max-width: 300px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
     position: relative;
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
+
+.card h2 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------
+   Плашки — ДОБАВЛЕНО
+-------------------------------------*/
 
 .badge {
     position: absolute;
@@ -80,47 +104,106 @@ input[type="text"] {
     color: white;
 }
 
-.regular-card a,
-.reports-link {
-    display: block;
-    color: #007bff;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 14px;
-    border-radius: 6px;
-    background-color: #f8fafc;
-    margin-top: 10px;
+/* ------------------------------------ */
+
+.regular-card p {
+    color: #666;
+    margin: 0 0 15px 0;
 }
 
-.regular-card a:hover,
-.reports-link:hover {
-    background-color: #e6f0fa;
+.regular-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.regular-card a:hover {
     color: #0056b3;
+    text-decoration: underline;
+    background-color: #f1f5fa;
+}
+
+/* Стили для карточки отчетов */
+.reports-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .reports-links {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 10px;
 }
 
+.reports-link {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    transition: all 0.2s;
+}
+
+.reports-link:hover {
+    background-color: #e6f0fa;
+    color: #0056b3;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    #card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    input[type="text"] {
+        width: 95%;
+    }
+
+    .badge {
+        top: 10px;
+        right: 10px;
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
+
+/* Плашка видеоконференции */
 .video-conference-badge {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #3399ff;
+    background-color: #3399ff; /* немного светлее синего */
     color: white;
     padding: 12px 20px;
     border-radius: 25px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 1000;
     font-weight: bold;
+    transition: all 0.3s ease;
     text-decoration: none;
-    transition: 0.3s;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
 }
 
 .video-conference-badge:hover {
-    background-color: #1a82e2;
+    background-color: #1a82e2; /* тёмный оттенок при наведении */
     transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
 }
+
 
 
