@@ -15,38 +15,52 @@
     </header>
 
     <main id="card-container">
+
+        <!-- Зеленая -->
         <div class="card regular-card">
+            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
             <h2>Ежедневные показатели для аналитика</h2>
             <p>Описание: Объём, покрытие, накопительное</p>
             <a href="https://datalens.yandex/x08wvggzw8aaj" target="_blank">Перейти к дашборду</a>
         </div>
 
+        <!-- Желтая -->
         <div class="card regular-card">
+            <div class="badge badge-yellow">Обновляется торговой командой</div>
             <h2>Потенциал/Сенсус</h2>
             <p>Описание: мониторинг работы с потенциалом</p>
             <a href="https://datalens.yandex/e60ym262gu0qz" target="_blank">Перейти к дашборду</a>
         </div>
-        
+
+        <!-- Красная -->
         <div class="card regular-card">
+            <div class="badge badge-red">Обновляется по получению данных от Nestle</div>
             <h2>Дисциплина</h2>
             <p>Описание: сводная информация о визитах ESR</p>
             <a href="https://datalens.yandex/llp65av7umng6" target="_blank">Перейти к дашборду</a>
-        </div>   
+        </div>
 
+        <!-- Желтая -->
         <div class="card regular-card">
+            <div class="badge badge-yellow">Обновляется торговой командой</div>
             <h2>StoreChek</h2>
             <p>Описание: динамика и наполнение проведённых StoreChek</p>
             <a href="https://datalens.yandex/wss5uarvyf4ih" target="_blank">Перейти к дашборду</a>
         </div>
 
+        <!-- Зеленая -->
         <div class="card regular-card">
+            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
             <h2>Выполнение Tier 3</h2>
-            <p>Описание: Заказаы, DBC И поточечный анализ</p>
+            <p>Описание: Заказы, DBC и поточечный анализ</p>
             <a href="https://datalens.yandex/adf56y4vc7huv" target="_blank">Перейти к дашборду</a>
-        </div>        
-        
+        </div>
+
+        <!-- Зеленая -->
         <div class="card reports-card">
+            <div class="badge badge-green">Обновляется ежедневно с 8:00 до 9:00</div>
             <h2>Ежедневные отчеты (Покрытие, Объем)</h2>
+
             <div class="reports-links">
                 <a href="https://datalens.yandex/mz05k7u3u3b48" target="_blank" class="reports-link">GC_Воронеж_TSM</a>
                 <a href="https://datalens.yandex/s68p7s47fumse" target="_blank" class="reports-link">GC_Белгород_TSM</a>
@@ -59,36 +73,15 @@
                 <a href="https://datalens.yandex/yceymbmndkh4k" target="_blank" class="reports-link">GC_Смоленск_TSM</a>
                 <a href="https://datalens.yandex/zdfz217jeheil" target="_blank" class="reports-link">GC_Тула_TSM</a>
             </div>
-        </div>      
+        </div>
+
     </main>
 
-    <a href="https://telemost.yandex.ru/j/92537877828086" class="video-conference-badge" target="_blank">
+    <a href="https://telemost.yandex.ru/j/92537877828086"
+       class="video-conference-badge"
+       target="_blank">
         Видеоконференция аналитика
     </a>
-        
-    <script>
-        function displayCards() {
-            const searchInput = document.getElementById('search');
-            const cards = document.querySelectorAll('.card');
 
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.toLowerCase();
-                cards.forEach(card => {
-                    const title = card.querySelector('h2').textContent.toLowerCase();
-                    const descriptionEl = card.querySelector('p');
-                    const description = descriptionEl ? descriptionEl.textContent.toLowerCase() : '';
-                    
-                    if (title.includes(query) || description.includes(query)) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            });
-        }
-
-        displayCards();
-    </script>
 </body>
 </html>
-
