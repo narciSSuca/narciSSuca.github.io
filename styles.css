@@ -222,3 +222,51 @@ body {
     transform: translateY(-3px);
 }
 
+/* ---------------------------------
+   Карточка "В разработке" (disabled)
+   --------------------------------- */
+.card-disabled {
+    background: #e9ecef;                  /* серый фон */
+    border: 1px solid #d0d4d8;
+    color: #777 !important;               /* общий серый текст */
+    box-shadow: none !important;
+    pointer-events: none;                 /* отключает клики */
+    opacity: 0.85;
+}
+
+.card-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Плашка "В разработке" */
+.badge-disabled {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #bfc3c7;
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+}
+
+/* Ссылка в неактивной карточке */
+.disabled-link {
+    margin-top: auto;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #d6d8db;
+    color: #888;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    cursor: default;
+}
