@@ -7,9 +7,18 @@
     --accent-blue: #007bff;
     --muted: #666;
     --text: #222;
+
+    --green1: #2ecc71;
+    --green2: #28b463;
+
+    --yellow1: #f9d342;
+    --yellow2: #f2c431;
+
+    --red1: #e74c3c;
+    --red2: #d6453a;
 }
 
-*{box-sizing:border-box}
+*{ box-sizing:border-box; }
 
 body {
     font-family: "Arial", sans-serif;
@@ -17,8 +26,6 @@ body {
     padding: 0;
     background-color: var(--bg);
     color: var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
 }
 
 /* -------------------------
@@ -45,7 +52,6 @@ body {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.2px;
 }
 
 #search {
@@ -74,12 +80,14 @@ body {
 .card {
     background: var(--card-bg);
     border-radius: 12px;
-    padding: 46px 18px 18px; /* ← верх увеличен для корректного отступа */
-    min-height: 150px;
+    padding: 18px;
+    padding-top: 22px;       /* собы врезана плашка */
     width: 300px;
+    min-height: 150px;
+
     box-shadow: 0 10px 18px rgba(20,30,50,0.06);
     transition: transform .18s ease, box-shadow .18s ease;
-    position: relative;
+
     display: flex;
     flex-direction: column;
 }
@@ -102,7 +110,40 @@ body {
     line-height: 1.3;
 }
 
-/* Ссылки внутри карточки */
+/* -------------------------
+   BADGES — ВСТРОЕННЫЕ
+   ------------------------- */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 14px; /* отступ от заголовка */
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height:1;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Цвета */
+.badge-green {
+    background: linear-gradient(180deg, var(--green1), var(--green2));
+    color: #fff;
+}
+
+.badge-yellow {
+    background: linear-gradient(180deg, var(--yellow1), var(--yellow2));
+    color: #111;
+}
+
+.badge-red {
+    background: linear-gradient(180deg, var(--red1), var(--red2));
+    color: #fff;
+}
+
+/* -------------------------
+   Ссылки
+   ------------------------- */
 .card a {
     margin-top: auto;
     display: inline-block;
@@ -120,7 +161,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Отчёты - список ссылок */
+/* Отчёты — список */
 .reports-links {
     display:flex;
     flex-direction:column;
@@ -141,45 +182,8 @@ body {
 .reports-link:hover { background:#eef6ff; }
 
 /* -------------------------
-   BADGES (плашки)
+   Адаптив
    ------------------------- */
-/* Специфичность: .card .badge — чтобы переопределять более общие правила, если они есть */
-.card .badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height:1;
-    box-shadow: 0 8px 18px rgba(10,20,40,0.08);
-    white-space: nowrap;
-    z-index: 30;
-    text-align:center;
-    -webkit-font-smoothing:antialiased;
-}
-
-/* Цвета плашек — используем хороший контраст */
-.badge-green {
-    background: linear-gradient(180deg,#2ecc71,#28b463);
-    color: #fff;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-
-.badge-yellow {
-    background: linear-gradient(180deg,#f9d342,#f2c431);
-    color: #1f1f1f;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-
-.badge-red {
-    background: linear-gradient(180deg,#e74c3c,#d6453a);
-    color: #fff;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-
-/* Мобильные размеры */
 @media (max-width: 880px) {
     #card-container { padding: 16px; gap: 14px; }
     .card { width: calc(50% - 20px); min-width: 220px; }
@@ -189,10 +193,11 @@ body {
 @media (max-width: 520px) {
     .card { width: 92%; max-width: 540px; }
     #search { width: 95%; }
-    .card .badge { top: 10px; right: 10px; font-size: 11px; padding: 5px 9px; }
 }
 
-/* Видео-конференция — плавающая кнопка */
+/* -------------------------
+   Видеоконференция
+   ------------------------- */
 .video-conference-badge {
     position: fixed;
     top: 20px;
@@ -207,5 +212,6 @@ body {
     z-index: 999;
 }
 
-.video-conference-badge:hover { transform: translateY(-3px); }
-
+.video-conference-badge:hover {
+    transform: translateY(-3px);
+}
