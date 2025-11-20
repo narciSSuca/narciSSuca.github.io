@@ -116,13 +116,19 @@ body {
 .badge {
     display: inline-block;
     padding: 6px 12px;
-    margin-bottom: 14px; /* отступ от заголовка */
+    margin-bottom: 14px;
     border-radius: 999px;
     font-size: 12px;
     font-weight: 700;
-    line-height:1;
-
+    line-height: 1.2;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+    /* 🔥 ДОБАВЛЕНО — предотвращает вылезание */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Цвета */
@@ -215,3 +221,4 @@ body {
 .video-conference-badge:hover {
     transform: translateY(-3px);
 }
+
